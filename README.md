@@ -28,8 +28,8 @@ Check out the live app here: [https://hi-valentine.netlify.app](https://hi-valen
 
 ## 📸 Screenshots
 
-| Home Page | Success Page |
-| :---: | :---: |
+| Home Page | | Home Page |Success Page |
+| :---: | :---: | :---: |
 | ![1](https://github.com/RukmalFernando/Hi-Valentine/blob/main/Screenshot%202026-02-12%20083359.png) | ![2](https://github.com/RukmalFernando/Hi-Valentine/blob/main/Screenshot%202026-02-12%20083443.png)| ![3](https://github.com/RukmalFernando/Hi-Valentine/blob/main/Screenshot%202026-02-12%20083500.png) |
 
 
