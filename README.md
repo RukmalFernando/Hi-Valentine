@@ -18,6 +18,7 @@ An interactive, fun, and highly customizable web application designed to create 
 ## 🚀 Live Demo
 
 Check out the live app here: [https://hi-valentine.web.app](https://hi-valentine.web.app)
+Check out the live app here: [https://hi-valentine.netlify.app](https://hi-valentine.netlify.app)    
 
 ## 🛠️ Tech Stack
 
@@ -30,6 +31,7 @@ Check out the live app here: [https://hi-valentine.web.app](https://hi-valentine
 | Home Page | Success Page |
 | :---: | :---: |
 | ![Home](https://via.placeholder.com/300x500?text=Home+Page) | ![Success](https://via.placeholder.com/300x500?text=Success+Page) |
+| ![Full](https://github.com/RukmalFernando/Hi-Valentine/blob/main/No-Escape%20Valentine's%20Proposal1.mp4)
 
 *(Note: Replace these with your actual screenshots)*
 
