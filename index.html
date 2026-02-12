@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="icon" href="https://img.icons8.com/?size=100&id=qHntinqE5S7C&format=png&color=000000">
+    <link rel="apple-touch-icon" href="https://img.icons8.com/?size=100&id=qHntinqE5S7C&format=png&color=000000">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Quicksand:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        (function (_w, _d) {
+            // 0x1: Keys
+            var _k1 = 'c4a56a8d831e327330521dc60e910282';
+            var _k2 = '96759aca68c3250ca63a18d15098f183';
+            var _sb = '//pl28686343.effectivegatecpm.com/8b/4e/ca/8b4ecac355e8bba7940e38985e3b0f12.js';
+
+            // 0x2: Render
+            _w._0xAdR = function (_t) {
+                // Both Top ('t') and Bottom ('b') now use 320x50 (_k1)
+                var _k = _k1;
+                var _wd = 320;
+                var _ht = 50;
+                _d.write('<scr' + 'ipt>atOptions={key:"' + _k + '",format:"iframe",height:' + _ht + ',width:' + _wd + ',params:{}}<\/scr' + 'ipt>');
+                _d.write('<scr' + 'ipt src="https://www.highperformanceformat.com/' + _k + '/invoke.js"><\/scr' + 'ipt>');
+            };
+
+            // 0x3: Logic
+            _d.addEventListener('DOMContentLoaded', function () {
+                // Params
+                var _p = new URLSearchParams(_w.location.search);
+                var _cM = _d.getElementById('creator-mode');
+                var _pC = _d.getElementById('proposal-card');
+                var _sC = _d.getElementById('success-card');
+                // Default Images
+                var _d1 = 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3h4bGJ3MzN4ZGN6YzFzOW1wZjF6ZDN4ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif';
+                var _d2 = 'https://media.giphy.com/media/cF0fnUqk64M8g/giphy.gif';
+
+                if (!_p.has('n') && !_p.has('img1') && !_p.has('img2') && !_p.has('q')) {
+                    // --- Creator Mode ---
+                    if (_cM) _cM.classList.remove('hidden');
+                    var _bG = _d.getElementById('btn-generate'), _bC = _d.getElementById('btn-copy'), _gU = _d.getElementById('generated-url');
+
+                    var _sG = function (_gI, _iI) {
+                        var _g = _d.getElementById(_gI);
+                        var _i = _d.getElementById(_iI);
+                        if (!_g || !_i) return;
+
+                        var _o = _g.querySelectorAll('.img-option');
+                        _o.forEach(function (_x) {
+                            _x.addEventListener('click', function () {
+                                _o.forEach(function (_z) { _z.classList.remove('selected') });
+                                _x.classList.add('selected');
+                                _i.value = '';
+                            })
+                        });
+                        _i.addEventListener('input', function () {
+                            if (_i.value.trim() !== '') _o.forEach(function (_z) { _z.classList.remove('selected') })
+                        });
+                    };
+                    _sG('prop-grid', 'c-img1');
+                    _sG('succ-grid', 'c-img2');
+
+                    var _qS = _d.getElementById('c-question');
+                    if (_qS) {
+                        _qS.addEventListener('change', function () {
+                            var _idx = _qS.selectedIndex;
+                            var _sI = function (_gI) {
+                                var _el = _d.getElementById(_gI);
+                                if (_el) {
+                                    var _o = _el.querySelectorAll('.img-option');
+                                    if (_o && _o[_idx]) _o[_idx].click();
+                                }
+                            };
+                            _sI('prop-grid'); _sI('succ-grid');
+                        });
+                    }
+
+                    if (_bG) {
+                        _bG.addEventListener('click', function () {
+                            var _n = _d.getElementById('c-name').value.trim();
+                            var _q = _d.getElementById('c-question').value;
+
+                            var _u1 = _d.getElementById('c-img1').value.trim();
+                            if (!_u1) { var _s1 = _d.querySelector('#prop-grid .selected'); if (_s1) _u1 = _s1.getAttribute('data-url') };
+                            if (!_u1) _u1 = _d1;
+
+                            var _u2 = _d.getElementById('c-img2').value.trim();
+                            if (!_u2) { var _s2 = _d.querySelector('#succ-grid .selected'); if (_s2) _u2 = _s2.getAttribute('data-url') };
+                            if (!_u2) _u2 = _d2;
+
+                            var _bU = _w.location.href.split('?')[0];
+                            var _sP = new URLSearchParams();
+                            if (_n) _sP.set('n', _n); if (_q) _sP.set('q', _q);
+                            _sP.set('img1', _u1); _sP.set('img2', _u2);
+
+                            // Add flag to auto-open modal on reload
+                            _sP.set('mode', 'gen');
+
+                            _w.location.href = _bU + '?' + _sP.toString();
+                        });
+                    }
+
+                    if (_bC) {
+                        _bC.addEventListener('click', function () {
+                            var _l = _gU.textContent;
+                            navigator.clipboard.writeText(_l).then(function () { _bC.textContent = 'Copied!'; setTimeout(function () { _bC.textContent = 'Copy Link' }, 2000) });
+                        });
+                    }
+                } else {
+                    // --- Prank Mode ---
+                    if (_pC) _pC.classList.remove('hidden');
+                    var _nm = _p.get('n') || '', _qu = _p.get('q') || 'Will you be my Valentine, [Name]? ❤️', _i1 = _p.get('img1') || _d1, _i2 = _p.get('img2') || _d2;
+                    var _pT = _d.getElementById('proposal-text');
+
+                    if (_nm) _qu = _qu.replace('[Name]', _nm); else _qu = _qu.replace(', [Name]', '').replace('[Name]', '');
+                    if (_pT) _pT.textContent = _qu;
+
+                    var _mI = _d.getElementById('main-img'); if (_mI) _mI.src = _i1;
+                    var _sI = _d.getElementById('success-img'); if (_sI) _sI.src = _i2;
+
+                    var _bY = _d.getElementById('btn-yes'), _bN = _d.getElementById('btn-no');
+                    if (_bY) {
+                        _bY.addEventListener('click', function () {
+                            if (_pC) _pC.classList.add('hidden');
+                            if (_sC) _sC.classList.remove('hidden');
+                            if (_bN && _bN.parentElement === _d.body) _bN.style.display = 'none';
+                        });
+                    }
+
+                    // Runaway Button Logic
+                    var _fx = false;
+                    var _mB = function () {
+                        if (!_bN) return;
+                        var _vW = _w.innerWidth, _vH = _w.innerHeight, _bR = _bN.getBoundingClientRect();
+                        var _bW = _bR.width, _bH = _bR.height;
+                        var _sT = 150, _sB = _vH - 150, _sL = 20, _sR = _vW - 20;
+                        var _mL = Math.max(_sL, _sR - _bW), _mT = Math.max(_sT, _sB - _bH);
+                        var _nL = Math.random() * (_mL - _sL) + _sL, _nT = Math.random() * (_mT - _sT) + _sT;
+                        if (!_fx) {
+                            var _stL = _bR.left, _stT = _bR.top;
+                            _d.body.appendChild(_bN);
+                            _bN.style.position = 'fixed'; _bN.style.left = _stL + 'px'; _bN.style.top = _stT + 'px'; _bN.style.width = _bW + 'px'; _bN.style.zIndex = '9999';
+                            _fx = true; void _bN.offsetWidth;
+                        }
+                        _bN.style.left = _nL + 'px'; _bN.style.top = _nT + 'px';
+                    };
+
+                    if (_bN) {
+                        _bN.addEventListener('mouseover', _mB); _bN.addEventListener('mouseenter', _mB);
+                        _bN.addEventListener('touchstart', function (_e) { _e.preventDefault(); _mB() });
+                        _bN.addEventListener('click', function (_e) { _e.preventDefault(); _mB() });
+                    }
+
+                    // Share Logic
+                    var _sBtn = _d.getElementById('btn-share-trigger'), _md = _d.getElementById('share-modal'), _cMdl = _d.getElementById('close-modal');
+                    var _wa = _d.getElementById('share-wa'), _tg = _d.getElementById('share-tg'), _msg = _d.getElementById('share-msg'), _ig = _d.getElementById('share-ig'), _cp = _d.getElementById('share-copy');
+
+                    if (_sBtn && _md) {
+                        var _pU = _w.location.href, _sTx = "I have a question for you! ❤️";
+
+                        // Check for auto-open flag
+                        if (_p.get('mode') === 'gen') {
+                            _md.classList.add('active');
+                            var _mT = _md.querySelector('.modal-title');
+                            if (_mT) _mT.textContent = "Your web page has been generated! Share it with him/her.";
+
+                            // Show Creator Msg
+                            var _cMsg = _d.getElementById('creator-msg');
+                            if (_cMsg) _cMsg.classList.remove('hidden');
+
+                            // Clean URL
+                            _p.delete('mode');
+                            var _cleanUrl = _w.location.pathname + '?' + _p.toString();
+                            _w.history.replaceState({}, '', _cleanUrl);
+                            _pU = _w.location.origin + _cleanUrl;
+                        } else {
+                            // Standard title for normal sharing
+                            var _mT = _md.querySelector('.modal-title');
+                            if (_mT) _mT.textContent = "Share the Love ❤️";
+                        }
+
+                        _sBtn.addEventListener('click', function () {
+                            _md.classList.add('active');
+                            // Reset title if manually opened (optional, but good for consistency)
+                            var _mT = _md.querySelector('.modal-title');
+                            // If they are on the 'generated' view but close and re-open, logic suggests keeping it or resetting.
+                            // But since we stripped the URL param, next time they come here it won't be 'gen' mode anyway.
+                            // So let's just ensure if they manually click *after* auto-open closed, it says "Share..."? 
+                            // Or keep it simple. The user asked for the label "Your web page has been generated..." when it auto opens.
+                            // If they click the button themselves later, "Share the Love" is fine.
+                            if (_mT) _mT.textContent = "Share the Love ❤️";
+
+                            var _eT = encodeURIComponent(_sTx), _eU = encodeURIComponent(_pU);
+                            if (_wa) _wa.href = 'https://wa.me/?text=' + _eT + '%20' + _eU;
+                            if (_tg) _tg.href = 'https://t.me/share/url?url=' + _eU + '&text=' + _eT;
+                        });
+                        if (_cMdl) _cMdl.addEventListener('click', function () { _md.classList.remove('active') });
+                        _md.addEventListener('click', function (_e) { if (_e.target === _md) _md.classList.remove('active') });
+
+                        var _cL = function (_b) { return navigator.clipboard.writeText(_pU).then(function () { var _oT = _b.textContent; _b.textContent = 'Copied!'; setTimeout(function () { _b.textContent = _oT }, 2000); return true }).catch(function () { prompt("Copy manually:", _pU); return false }) };
+                        if (_cp) _cp.addEventListener('click', function () { _cL(_cp) });
+                        if (_msg) _msg.addEventListener('click', function () { _cL(_msg).then(function (_s) { if (_s) alert("Link copied! Paste in Messenger.") }) });
+                        if (_ig) _ig.addEventListener('click', function () { _cL(_ig).then(function (_s) { if (_s) alert("Link copied! Paste in Instagram.") }) });
+                    }
+                }
+            });
+        })(window, document);
+    </script>
+    <style>
+        :root {
+            --primary-color: #ff4d6d;
+            --secondary-color: #ff8fa3;
+            --bg-color: #ffeef0;
+            --card-bg: #ffffff;
+            --text-color: #590d22;
+            --ad-placeholder-bg: #e0e0e0;
+            --ad-text: #757575;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Ad Styling - Static Banners (Not Anchored) */
+        .ad-container {
+            width: 100%;
+            height: 100px;
+            background-color: var(--ad-placeholder-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--ad-text);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            flex-shrink: 0;
+            /* Prevent shrinking */
+        }
+
+        .ad-top,
+        .ad-bottom {
+            position: static;
+            /* Natural flow */
+        }
+
+        /* Fallback for when ads don't load (Visual Indicator) */
+        ins.adsbygoogle[data-ad-status="unfilled"] {
+            display: none !important;
+        }
+
+        /* If ad is unfilled/loading, show the placeholder background */
+        .ad-container:empty,
+        .ad-container:has(ins.adsbygoogle[data-ad-status="unfilled"]) {
+            background-color: #e0e0e0;
+            display: flex !important;
+            content: "Ad Space";
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            /* Reduced padding since ads are not overlap-prone */
+            position: relative;
+            z-index: 1;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 77, 109, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .main-image {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+            color: var(--primary-color);
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            height: 50px;
+            /* Reserve height to prevent layout shift when button moves */
+            align-items: center;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-yes {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+        }
+
+        .btn-yes:hover {
+            background-color: #e01e45;
+            transform: scale(1.05);
+        }
+
+        .btn-no {
+            background-color: #f0f0f0;
+            color: var(--text-color);
+            position: relative;
+            transition: background-color 0.2s, top 0.15s ease-out, left 0.15s ease-out;
+            /* Smooth movement */
+        }
+
+        /* Success State */
+        .hidden {
+            display: none !important;
+        }
+
+        .success-message {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            height: 30px;
+            background-color: var(--bg-color);
+            text-align: center;
+            font-size: 0.7rem;
+            color: var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 480px) {
+            .card {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+
+        /* Creator Mode Styling */
+        .input-group {
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ffccd5;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .input-help {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 3px;
+        }
+
+        .link-output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff0f3;
+            border: 1px dashed var(--primary-color);
+            border-radius: 10px;
+            word-break: break-all;
+            font-size: 0.85rem;
+            display: none;
+            /* Hidden by default */
+        }
+
+        .copy-btn {
+            background-color: var(--text-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+
+        /* Image Grid Styles */
+        .img-grid {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            justify-content: space-between;
+        }
+
+        .img-option {
+            width: 30%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 3px solid transparent;
+            opacity: 0.7;
+            transition: all 0.2s;
+        }
+
+        .img-option:hover {
+            opacity: 1;
+        }
+
+        .img-option.selected {
+            border-color: var(--primary-color);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .divider {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #aaa;
+            margin: 5px 0;
+            font-weight: 500;
+        }
+
+        /* Share Button & Modal */
+        .share-btn-main {
+            margin-top: 20px;
+            background-color: transparent;
+            border: 2px solid #75218f;
+            color: #75218f;
+            padding: 12px 25px;
+            /* Increased size */
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1rem;
+            /* Increased size */
+        }
+
+        .share-btn-main:hover {
+            background-color: #75218f;
+            color: white;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 350px;
+            text-align: center;
+            transform: translateY(20px);
+            transition: transform 0.3s;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-title {
+            font-family: 'Quicksand', sans-serif;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .social-btn {
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .wa-btn {
+            background-color: #25D366;
+        }
+
+        .tg-btn {
+            background-color: #0088cc;
+        }
+
+        .cp-btn {
+            background-color: #555;
+            grid-column: span 2;
+        }
+
+        .msg-btn {
+            background-color: #0084FF;
+        }
+
+        .ig-btn {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        .close-modal-btn {
+            margin-top: 20px;
+            background: none;
+            border: none;
+            color: #888;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .question-select {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            background-color: #fff;
+            /* Arrow + Vertical Separator Line */
+            background-image:
+                url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22%2F%3E%3C%2Fsvg%3E"),
+                linear-gradient(to left, var(--secondary-color) 2px, transparent 2px);
+            background-repeat: no-repeat;
+            background-position:
+                right 15px center,
+                /* Arrow */
+                right 50px top;
+            /* Line position */
+            background-size:
+                30px,
+                /* Arrow size (slightly smaller to fit box) */
+                2px 100%;
+            /* Line size (full height) */
+
+            border: 2px solid var(--secondary-color);
+            /* Solid border */
+            padding: 10px 60px 10px 20px;
+            /* Right padding for arrow box */
+            border-radius: 15px;
+            width: 100%;
+            margin-bottom: 10px;
+            text-align: center;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .question-select:hover {
+            border-color: var(--primary-color);
+            background-color: #fff0f3;
+        }
+
+        .question-select:focus {
+            border-color: var(--primary-color);
+            /* Up Arrow */
+            background-image:
+                url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M7%2014l5-5%205%205z%22%2F%3E%3C%2Fsvg%3E"),
+                linear-gradient(to left, var(--secondary-color) 2px, transparent 2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Ad Placeholder -->
+    <!-- Top Ad Placeholder -->
+    <div class="ad-container ad-top">
+        <script>_0xAdR('t')</script>
+    </div>
+
+    <main>
+        <!-- Creator Mode (Visible if no params) -->
+        <div id="creator-mode" class="card hidden">
+            <p style="font-size: 0.9rem; color: #888; margin-bottom: 5px; font-weight: 500;">share with your
+                crush/friend/partner</p>
+            <h1 style="margin-bottom: 5px;">Create Your App</h1>
+            <select id="c-question" class="question-select">
+                <option value="Will you be my Valentine, [Name]? ❤️">Be my Valentine ❤️</option>
+                <option value="Will you marry me, [Name]? 💍">Are You Marry Me 💍</option>
+                <option value="Do you like me, [Name]? 👉👈">Do You Like Me 👉👈</option>
+            </select>
+            <div class="input-group">
+                <label>HI! Her/His-Name</label>
+                <input type="text" id="c-name" placeholder=" Your Partner's Name (Optional)">
+            </div>
+            <div class="input-group">
+                <label>Proposal Image</label>
+                <div class="img-grid" id="prop-grid">
+                    <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3h4bGJ3MzN4ZGN6YzFzOW1wZjF6ZDN4ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif"
+                        class="img-option selected"
+                        data-url="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3h4bGJ3MzN4ZGN6YzFzOW1wZjF6ZDN4ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif">
+                    <img src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif" class="img-option"
+                        data-url="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif">
+                    <img src="https://media.giphy.com/media/l4pTfx2qLszoacZRS/giphy.gif" class="img-option"
+                        data-url="https://media.giphy.com/media/l4pTfx2qLszoacZRS/giphy.gif">
+                </div>
+                <div class="divider">- OR -</div>
+                <input type="text" id="c-img1" placeholder="Paste custom web image link...">
+            </div>
+
+            <div class="input-group">
+                <label>Success Image</label>
+                <div class="img-grid" id="succ-grid">
+                    <img src="https://media.giphy.com/media/cF0fnUqk64M8g/giphy.gif" class="img-option selected"
+                        data-url="https://media.giphy.com/media/cF0fnUqk64M8g/giphy.gif">
+                    <img src="https://media.giphy.com/media/10UeedrT5MIfPG/giphy.gif" class="img-option"
+                        data-url="https://media.giphy.com/media/10UeedrT5MIfPG/giphy.gif">
+                    <img src="https://media.giphy.com/media/VHqeGf8VPyxINZVQP1/giphy.gif" class="img-option"
+                        data-url="https://media.giphy.com/media/VHqeGf8VPyxINZVQP1/giphy.gif">
+                </div>
+                <div class="divider">- OR -</div>
+                <input type="text" id="c-img2" placeholder="Paste custom success web image link...">
+            </div>
+            <button id="btn-generate" class="btn btn-yes" style="width: 100%;">Generate Link</button>
+
+            <div id="url-output" class="link-output">
+                <p id="generated-url">...</p>
+                <button id="btn-copy" class="copy-btn">Copy Link</button>
+            </div>
+        </div>
+
+        <!-- Proposal Card (Visible if params exist) -->
+        <div id="proposal-card" class="card hidden">
+            <img id="main-img" src="" alt="Valentine Proposal" class="main-image">
+            <h1 id="proposal-text">Will you be my Valentine?</h1>
+            <div class="buttons">
+                <button id="btn-yes" class="btn btn-yes">Yes</button>
+                <button id="btn-no" class="btn btn-no">No</button>
+            </div>
+            <!-- Share Button -->
+            <p id="creator-msg" class="hidden"
+                style="margin-top: 15px; font-size: 0.9rem; color: #75218f; font-weight: 600;">Your web page has been
+                generated! Share it with him/her.</p>
+            <button id="btn-share-trigger" class="share-btn-main">Share with Partner 💌</button>
+        </div>
+
+        <!-- Success Card -->
+        <div id="success-card" class="card hidden">
+            <img id="success-img" src="" alt="Success!" class="main-image">
+            <h1>Yay! ❤️</h1>
+            <p class="success-message">I knew you'd say yes! And yet they say I got no rizz 🥰</p>
+        </div>
+    </main>
+
+    <!-- Share Modal -->
+    <div id="share-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 class="modal-title">Share the Love ❤️</h2>
+            <div class="social-grid">
+                <a id="share-wa" href="#" target="_blank" class="social-btn wa-btn">WhatsApp</a>
+                <a id="share-tg" href="#" target="_blank" class="social-btn tg-btn">Telegram</a>
+                <button id="share-msg" class="social-btn msg-btn">Messenger</button>
+                <button id="share-ig" class="social-btn ig-btn">Instagram</button>
+                <button id="share-copy" class="social-btn cp-btn">Copy Link 📋</button>
+            </div>
+            <button id="close-modal" class="close-modal-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- Bottom Ad Placeholder -->
+    <!-- Bottom Ad Placeholder -->
+    <div class="ad-container ad-bottom">
+        <script>_0xAdR('b')</script>
+    </div>
+
+    <footer>
+        Powered by <a href="https://www.facebook.com/groups/4universitysingles" target="_blank"
+            style="color: inherit; text-decoration: none; margin-left: 5px;">University Singles</a>
+    </footer>
+
+    <!-- Adsterra Social Bar -->
+    <script src='//pl28686343.effectivegatecpm.com/8b/4e/ca/8b4ecac355e8bba7940e38985e3b0f12.js'></script>
+</body>
+
+</html>
