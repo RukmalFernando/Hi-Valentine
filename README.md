@@ -28,10 +28,10 @@ Check out the live app here: [https://hi-valentine.netlify.app](https://hi-valen
 
 ## 📸 Screenshots
 
-| Home Page | Success Page |
-| :---: | :---: |
-| ![Home](https://via.placeholder.com/300x500?text=Home+Page) | ![Success](https://via.placeholder.com/300x500?text=Success+Page) |
-| ![Full](https://github.com/RukmalFernando/Hi-Valentine/blob/main/No-Escape%20Valentine's%20Proposal1.mp4)
+| Home Page | | Home Page |Success Page |
+| :---: | :---: | :---: |
+| ![1](https://github.com/RukmalFernando/Hi-Valentine/blob/main/Screenshot%202026-02-12%20083359.png) | ![2](https://github.com/RukmalFernando/Hi-Valentine/blob/main/Screenshot%202026-02-12%20083443.png)| ![3](https://github.com/RukmalFernando/Hi-Valentine/blob/main/Screenshot%202026-02-12%20083500.png) |
+
 
 *(Note: Replace these with your actual screenshots)*
 
